@@ -56,7 +56,7 @@
   <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0"/>
   <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1"/>
 
-  <plugin name="com.phonegap.plugins.pushplugin" spec="2.4.0" source="pgb" />
+  <plugin name="phonegap-plugin-push" source="npm" spec="~1.8.1"/>
 
   <plugin name="cordova.plugins.diagnostic" source="npm" version="2.2.4" /><!--verificar estados de los dispositivos-->
   <plugin name="plugin_open_gps" source="npm" version="1.1.8" /><!--verificar estados de los dispositivos por soyoda-->
