@@ -67,6 +67,13 @@
     <gap:plugin name="com.phonegap.plugins.barcodescanner" />
 -->
 
+  <preference name="phonegap-version" value="cli-6.3.0" />
+  <preference name="orientation"      value="default" />
+  <preference name="target-device"    value="universal" />
+  <preference name="fullscreen"       value="false" />
+  <preference name="webviewbounce"    value="false" />
+
+
 <!-- Define app icon for each platform. -->
 <icon src="public/images/Logo.png" width="72" height="72" />
 <icon src="public/images/Logo.png" width="48" height="48" />
