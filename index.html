@@ -14,7 +14,7 @@
     <script src="public/jquery/gps.js"></script>
     <script src="public/jquery/gpsController.js"></script>
     <script src="public/jquery/plugins/numeric.js"></script>
-    
+    <script src="public/html/plugins/fastclick/fastclick.js"></script>
         
     <script type="text/javascript">
         $(document).ready(function(){  
@@ -22,7 +22,7 @@
 
            });            
            contentPage('pages/login.html');             
-           app.onDeviceReady();      
+           app.onDeviceReady();  
         });
         
         function getCoordenatesGPS(){
@@ -52,14 +52,15 @@
             });
         }      
 
-        function fastClicStart()
-        {
-            FastClick.attach(document.body);
+        if ('addEventListener' in document) {
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
         }
 
     </script>
   </head>
-  <body class="sidebar-mini skin-blue-light">
+  <body class="sidebar-mini skin-blue-light" >
         <div id='sync_sys' style='display:none' ></div>
 
         <div id='loader_sys' style='display:none' >
