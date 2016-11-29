@@ -18,13 +18,11 @@
         
     <script type="text/javascript">
         $(document).ready(function(){  
-           app.initialize(function(){});            
-           contentPage('pages/login.html');             
-           app.onDeviceReady(); 
+          app.initialize(function(){
 
-           window.addEventListener('load', function () {
-                FastClick.attach(document.body);
-            }, false);     
+           });            
+           contentPage('pages/login.html');             
+           app.onDeviceReady();      
         });
         
         function getCoordenatesGPS(){
@@ -54,7 +52,10 @@
             });
         }      
 
-      
+        function fastClicStart();
+        {
+            FastClick.attach(document.body);
+        }
 
     </script>
   </head>
