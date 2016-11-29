@@ -1,5 +1,26 @@
-    <script>
     
+    <link rel="stylesheet" href="public/html/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/html/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="public/html/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="public/html/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="public/html/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="public/css/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="public/css/jquery-ui/main.css">
+    <link rel="stylesheet" href="public/css/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/ionicons-2.0.1/css/ionicons.min.css">
+
+    <script src="public/html/plugins/fastclick/fastclick.min.js"></script>
+    <script src="public/html/bootstrap/js/bootstrap.min.js"></script>
+    <script src="public/jquery/cloud/moment.min.js"></script>
+    <script src="public/html/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="public/html/dist/js/app.min.js"></script>
+    <script src="public/jquery/cloud/jquery-ui.js"></script>
+    <script src="public/jquery/plugins/numeric.js"></script>
+
+
+
+
+    <script>    
         $(document).ready(function () {
             BDConsulta("SELECT COUNT(*) CONT FROM sqlite_master WHERE type='table' AND name='APP_USUARIO';", function (obj) {
                 if (obj.CONT != 0) {
