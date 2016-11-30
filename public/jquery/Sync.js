@@ -147,7 +147,8 @@ function SyncExeSendInfo(sqlCommand,table,loader) {
 }
 
 
-function SyncApp_Web(TableSelect, TableAction, TableFinAction, ColumType, detailColum,FieldsUpdate,FielsdExist,alerta,loader){
+function SyncApp_Web(TableSelect, TableAction, TableFinAction, ColumType, detailColum,FieldsUpdate,FielsdExist,alerta,msg,loader){
+    if (loader) { $("#loader_sys").show(); }
     index=0;
     strAction="";
 	regTable = TableSelect.split("@@");
@@ -157,11 +158,10 @@ function SyncApp_Web(TableSelect, TableAction, TableFinAction, ColumType, detail
 	regColumType = ColumType.split("@@");
 	regFieldsUpdate = FieldsUpdate.split("@@");
 	regFieldExist = FielsdExist.split("@@");  
-
-    SyncAppWebExec(alerta,loader);
+    SyncAppWebExec(alerta,msg,loader);
 }
 
-function SyncAppWebExec(alerta,loader){
+function SyncAppWebExec(alerta,msg,loader){
     if(index < regTable.length){
 	    BDConsultaOBJ( regTable[index] , function (obj){    
 	        for (var j = 0; j < obj.rows.length; j++) {        
@@ -209,7 +209,7 @@ function SyncAppWebExec(alerta,loader){
 	            strAction=strAction+actionStr;
 	        }
 	        index++;
-	        SyncAppWebExec(alerta,loader);
+	        SyncAppWebExec(alerta,msg,loader);
 	    });
 	}else{
 		dataPost={     
@@ -219,6 +219,8 @@ function SyncAppWebExec(alerta,loader){
             USR : masterUsuario
         }
         AjaxSAC(syncServer+'/SyncAppWebExe', dataPost, loader, function (callback) {
+            if (loader) { $("#loader_sys").show(); }
+
             if(alerta){
                 alert(callback);
             } 
@@ -233,8 +235,11 @@ function SyncAppWebExec(alerta,loader){
                 BDActualizacion(regcallback[i]);
             }
 
-            if(loader){
-            	alert(regcallbackAll[1]);	
+            if(msg)
+            {
+            	alert(regcallbackAll[1]);
+                $("#loader_sys").hide();
+                $("#sync_sys").html("");	
             }
         });
 	}
