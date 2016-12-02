@@ -152,7 +152,7 @@
             calNextMonthIcon: "plus",
             calPrevMonthIcon: "minus",
             useInlineAlign: "left",
-            btnCls: " btn btn-sm btn-",
+            btnCls: " btn btn-lg btn-",
             icnCls: " glyphicon glyphicon-",
             s: {
                 cal: {
@@ -2278,7 +2278,7 @@
                 }
             }
             if (o.useButton) {
-                $("<div class='input-group-addon'>" + "<span class='" + o.icnCls + o.buttonIcon + "'></span>" + "</div>").attr("title", w.__("tooltip")).on(o.clickEvent, function(e) {
+                $("<div class='input-group-addon' style='padding-left: 30px;padding-right: 30px;'>" + "<span class='" + o.icnCls + o.buttonIcon + "' style='font-size: 20px;'></span>" + "</div>").attr("title", w.__("tooltip")).on(o.clickEvent, function(e) {
                     e.preventDefault();
                     if (o.useFocus) {
                         w.d.input.focus();
